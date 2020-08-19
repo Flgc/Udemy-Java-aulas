@@ -8,14 +8,18 @@ public class HourContract {
 	private Double valuePerHour;
 	private Integer hours;
 	
-	public HourContract() {}
+	//Standard constructor
+	public HourContract() {
+	}
 
+	//Arguments constructors generator
 	public HourContract(Date date, Double valuePerHour, Integer hours) {
 		this.date = date;
-		valuePerHour = valuePerHour;
+		this.valuePerHour = valuePerHour;
 		this.hours = hours;
 	}
 
+	//Get and Sets generator
 	public Date getDate() {
 		return date;
 	}
@@ -29,7 +33,7 @@ public class HourContract {
 	}
 
 	public void setValuePerHour(Double valuePerHour) {
-		valuePerHour = valuePerHour;
+		this.valuePerHour = valuePerHour;
 	}
 
 	public Integer getHours() {

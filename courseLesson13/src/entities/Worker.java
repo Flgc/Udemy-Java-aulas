@@ -18,10 +18,12 @@ public class Worker {
 	private Double baseSalary;
 	
 	//associations provided for in the project, see class diagram
+	
 	private Department departament;
 	
-	//Composição (tem muitos) não pode ser incluso no construtor **
-	//** Instanciado manualmente por padrão na classe com o ArrayList
+	//Composição (tem muitos) não pode ser incluso no construtor 
+	//Instanciado manualmente por padrão na classe com o ArrayList
+	
 	private List<HourContract> contracts = new ArrayList<>();	
 	
 	//Standard constructor
@@ -85,7 +87,7 @@ public class Worker {
 	
 	// Class methods
 	
-	// Add my contract to the list
+	// Add my contract to the list	
 	public void addContract(HourContract contract) {
 		contracts.add(contract);
 	}
@@ -95,8 +97,7 @@ public class Worker {
 		contracts.remove(contract);
 	}
 	
-	//Caucula quanto ganhou no ano e mes, salario base 
-	// + o ganho do mes em contratos
+	//Calcula quanto ganhou no ano e mes, salario base + o ganho do mes em contratos
 	public double income(int year, int month) {
 		
 		double sum = baseSalary;
@@ -104,16 +105,15 @@ public class Worker {
 		//Date handling instance 
 		Calendar cal = Calendar.getInstance();
 		
-		//Testa se o contrato da variavel "c" pertence ao ano e mês informado no método
-		//Se for encontrado acrecenta na variavel "sum"
-		
+		//Testa se o contrato da variavel "c" pertence ao ano e mês informado se for encontrado acrecenta na variavel "sum"
 		for (HourContract c : contracts) {
 			
-			cal.setTime(c.getDate());	//Busca a data do contrato e define como data do calendário
+			cal.setTime(c.getDate());	//Busca a "data-do-contrato" e define como "data-do-calendário"
 			
 			int c_year = cal.get(Calendar.YEAR);		//Grava o ano do calendário
-			int c_month = 1 + cal.get(Calendar.MONTH); 	//Grava o mês do calendário - Obs(+1 pos inicia com "0" o calendário)
+			int c_month = 1 + cal.get(Calendar.MONTH); 	//Grava o mês do calendário - Obs(+1 já que Calendar inicia com "0" o calendário)
 		
+			// Verifica se o o ano e o mês informado no argumento e parametro são iguais
 			if (year == c_year && month == c_month) {
 				sum += c.totalValue();
 			}
