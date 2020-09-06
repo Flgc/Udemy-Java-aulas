@@ -86,7 +86,7 @@ public class Program {
 			System.out.print("Value per hour: ");
 			double valuePerHour = read.nextDouble();
 
-			if (ch == 'y') {
+			if (ch == 'y') {									//Aplicação do polimormismo
 				System.out.print("Additional charge: ");
 				double additionalCharge = read.nextDouble();
 				Employee emp = new OutsourcedEmployee(name, hours, valuePerHour, additionalCharge);

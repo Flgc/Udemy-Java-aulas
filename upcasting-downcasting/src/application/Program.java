@@ -27,7 +27,7 @@ public class Program {
 			System.out.println("Sucessifull loan!");
 		}
 		
-		if (acc3 instanceof SavingsAccount){ //Exemplo 3 - Testa se é do mesmo tipo
+		if (acc3 instanceof SavingsAccount){ //Exemplo 3 - Testa se é do mesmo tipo com instanceof
 			SavingsAccount acc5 = (SavingsAccount)acc3;
 			acc5.updateBalance();
 			System.out.println("Update!");
